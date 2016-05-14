@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+unless $LOAD_PATH.include?(File.dirname(__FILE__) + '/../lib/')
+  $LOAD_PATH << File.dirname(__FILE__) + '/../lib'
+end
+
+require 'grubocop/cli'
+
+options = Grubocop::CLI.read
+Grubocop::Analyzer.execute(options)
